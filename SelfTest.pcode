@@ -1,0 +1,27 @@
+import YOUR_PACKAGE:Base;
+
+class SelfTest extends YOUR_PACKAGE:Base
+   method SelfTest();
+   method run();
+end-class;
+
+method SelfTest
+   %Super = create YOUR_PACKAGE:Base("Your Class Name");
+end-method;
+
+method run
+   /+ Extends/implements YOUR_PACKAGE:TestBase.Run +/
+   
+   %This.description = "Pass";
+   %This.expectedResult = 2;
+   %This.actualResult = 1 + 1;
+   %This.test();
+   
+   %This.description = "Fail";
+   %This.expectedResult = 1;
+   %This.actualResult = 0;
+   %This.test();
+   
+   %This.passClass();
+   
+end-method;
