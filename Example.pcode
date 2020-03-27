@@ -1,0 +1,44 @@
+import UQ_UNIT_TEST:Base;
+
+class Example extends UQ_UNIT_TEST:Base
+   method Example();
+   method setup();
+   method run();
+   method teardown();
+end-class;
+
+method Example
+   %Super = create UQ_UNIT_TEST:Base("Your Class Name");
+end-method;
+
+method setup
+   /+ Extends/implements UQ_UNIT_TEST:Base.setup +/
+   %Super.setup();
+end-method;
+
+method run
+   /+ Extends/implements TTS_UNITTEST:TestBase.Run +/
+   
+   %This.description = "Numeric example";
+   %This.expectedResult = 2;
+   %This.actualResult = 1 + 1;
+   %This.test();
+   
+   %This.description = "String example";
+   %This.expectedResult = "expected";
+   %This.actualResult = "expected";
+   %This.test();
+   
+   %This.description = "Boolean example";
+   %This.expectedResult = True;
+   %This.actualResult = (1 + 1 = 2);
+   %This.test();
+   
+   %This.passClass();
+   
+end-method;
+
+method teardown
+   /+ Extends/implements UQ_UNIT_TEST:Base.teardown +/
+   %Super.teardown();
+end-method;
