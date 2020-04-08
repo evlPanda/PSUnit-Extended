@@ -1,0 +1,51 @@
+/* 
+  Required:
+  Component.TTS_INTRACTV_TESTR must include StyleSheet.XX_UNIT_TEST. 
+*/
+
+class HTML
+   property string tableStart get;
+   method getClassName(&className As string) Returns string;
+   property string columnHeadings get;
+   method testResult(&1 As string, &2 As any, &3 As any, &4 As string) Returns string;
+   property string pass get;
+   property string fail get;
+end-class;
+
+method getClassName
+   /+ &className as String +/
+   /+ Returns String +/
+   Return "<br><br><span id=""className"">Testing " | &className | "</span>";
+end-method;
+
+get tableStart
+   /+ Returns String +/
+   /* CSS not working for table. Mystery. */
+   <* Return "<table style=""width: 100%; border: 1px solid; box-shadow: 5px 8px #ccc;"">"; *>
+   Return "<table id=""results"">";
+end-get;
+
+get columnHeadings
+   /+ Returns String +/
+   Return "<tr><th width=""30%"">Description</th><th width=""30%"">Expected Result</th><th width=""30%"">Actual Result</th><th>Outcome</th></tr>";
+end-get;
+
+method testResult
+   /+ &1 as String, +/
+   /+ &2 as Any, +/
+   /+ &3 as Any, +/
+   /+ &4 as String +/
+   /+ Returns String +/
+   Return "<tr><td class=""testresult"">" | &1 | "</td><td class=""testresult"">" | &2 | "</td><td class=""testresult"">" | &3 | "</td><td>" | &4 | "</td></tr>";
+end-method;
+
+get pass
+   /+ Returns String +/
+   Return "<span id=""pass"" class=""outcome"">PASS</span>";
+end-get;
+
+get fail
+   /+ Returns String +/
+   Return "<span id=""fail"" class=""outcome"">FAIL</span>";
+end-get;
+
