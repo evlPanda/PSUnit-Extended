@@ -1,0 +1,55 @@
+#className {
+  border-radius: 5px 5px 0px 0px;
+  padding: 5px 20px 5px 20px;
+  background-color: #999; 
+  color: GhostWhite;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; 
+  font-size: larger;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+#results {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #999;
+  box-shadow: 5px 10px 5px #ccc;
+}
+
+#results th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #999;
+  color: GhostWhite;
+  font-weight: bold;
+}
+
+#results td, #results th {
+  border: 0px solid #ddd;
+  padding: 5px;
+}
+
+#results tr:nth-child(even){background-color: #f2f2f2;}
+
+#results tr:hover {background-color: #ddd;}
+
+.outcome {
+  font-weight: bold;
+  display: block;
+  padding:5px 2px 5px 5px;
+  border-radius: 5px;
+}
+
+#pass {
+  background-color: #3AFFC0;
+}
+
+#fail {
+	background-color: #FF2184;
+	color: white;
+}
+
+</style>
