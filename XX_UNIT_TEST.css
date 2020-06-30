@@ -30,6 +30,7 @@
 #results td, #results th {
   border: 0px solid #ddd;
   padding: 5px;
+  vertical-align: top;
 }
 
 #results tr:nth-child(even){background-color: #f2f2f2;}
